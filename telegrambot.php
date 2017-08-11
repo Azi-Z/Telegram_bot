@@ -8,8 +8,11 @@ $update = file_get_contents($website."/getupdates");
 $updatearray = json_decode($update, TRUE);
 
 $chat_id = $updatearray["result"][0]["message"]["chat"]["id"];
+print_r($chat_id);
+print_r($updatearray);
 
-// print_r($text); will print first text (/start)
+//print_r($text); will print first text (/start)
 //file_get_contents($website."/sendmessage?chat_id=".$chat_id."&text=sunday");
+
 
  ?>
