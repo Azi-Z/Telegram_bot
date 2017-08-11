@@ -6,7 +6,8 @@ session_start();
 $client = new Google_Client();
 $client->setAuthConfigFile('client_secret.json');
 $client->setRedirectUri('http://' . $_SERVER['HTTP_HOST'] . '/new/php-oauth2-example/oauth2callback.php');
-$client->addScope(Google_Service_Drive::DRIVE_METADATA_READONLY);
+$client->addScope(Google_Service_Calendar::CALENDAR_READONLY); // added now
+//$client->addScope(Google_Service_Drive::DRIVE_METADATA_READONLY);
 
 if (! isset($_GET['code'])) {
   $auth_url = $client->createAuthUrl();
